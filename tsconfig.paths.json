@@ -6,6 +6,8 @@
             "@types": ["./types"],
             "@components/*": ["./components/*"],
             "@components": ["./components"],
+            "@context/*": ["./context/*"],
+            "@context": ["./context"],
             "@store/*": ["./store/*"],
             "@store": ["./store"],
             "@assets/*": ["./assets/*"],

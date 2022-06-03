@@ -1,11 +1,19 @@
 import React from 'react'
-
+import { ThemeContext } from '@context'
 import { Button } from '@components/Button'
+import { Input } from '@components/Input'
 import icon from '@assets/images/svg/btn.svg'
 
 export const App: React.FC<{}> = () => {
+  const { switchThemeMode } = React.useContext(ThemeContext)!
+
   return (
-    <div style={{ padding: '2rem' }}>
+    <main style={{ padding: '2rem' }}>
+      <Button
+        value='change theme mode'
+        onClick={() => switchThemeMode()}
+        rounded='poignant'
+      />
       <p>Nepmotheme</p>
 
       <hr />
@@ -56,18 +64,21 @@ export const App: React.FC<{}> = () => {
           textAlign: 'center'
         }}
       >
-        <div style={{ padding: '3rem' }} className='shadow-sm circle-sm-fixed'>
+        <div
+          style={{ padding: '1.5rem' }}
+          className='shadow-sm circle-small-fixed'
+        >
           <h3>circle block</h3>
         </div>
         <div
-          style={{ padding: '3rem' }}
-          className='concave shadow-md circle-md-fixed'
+          style={{ padding: '1.5rem' }}
+          className='concave shadow-md circle-middle-fixed'
         >
           <h3>circle concave block</h3>
         </div>
         <div
-          style={{ padding: '3rem' }}
-          className='convex shadow-lg circle-lg-fixed'
+          style={{ padding: '1.5rem' }}
+          className='convex shadow-lg circle-large-fixed'
         >
           <h3>circle convex block</h3>
         </div>
@@ -82,17 +93,20 @@ export const App: React.FC<{}> = () => {
           textAlign: 'center'
         }}
       >
-        <div style={{ padding: '3rem' }} className='shadow-sm square-sm-fixed'>
+        <div
+          style={{ padding: '1.5rem' }}
+          className='shadow-sm square-sm-fixed'
+        >
           <h3>square block</h3>
         </div>
         <div
-          style={{ padding: '3rem' }}
+          style={{ padding: '1.5rem' }}
           className='concave shadow-md square-md-fixed'
         >
           <h3>square concave block</h3>
         </div>
         <div
-          style={{ padding: '3rem' }}
+          style={{ padding: '1.5rem' }}
           className='convex shadow-lg square-lg-fixed'
         >
           <h3>square convex block</h3>
@@ -103,13 +117,17 @@ export const App: React.FC<{}> = () => {
 
       <h1>component Button</h1>
 
+      <Input value='small-text' size='small' />
+
       <Button
-        value='icon button on the top'
+        value='icon BUTTON on the top'
         icon={icon}
         iconPosition='top'
         size='small'
         type='button'
         appearance='flat'
+        color='primary'
+        variant='outlined'
       />
 
       <Button
@@ -119,6 +137,8 @@ export const App: React.FC<{}> = () => {
         size='small'
         type='button'
         appearance='flat'
+        color='primary'
+        variant='outlined'
       />
 
       <Button
@@ -141,8 +161,10 @@ export const App: React.FC<{}> = () => {
 
       <hr />
 
+      <Input value='middle-text' size='middle' />
+
       <Button
-        value='icon button on the top'
+        value='icon BUTTON on the top'
         icon={icon}
         iconPosition='top'
         size='middle'
@@ -175,12 +197,19 @@ export const App: React.FC<{}> = () => {
         size='middle'
         type='button'
         appearance='flat'
+        iconListenTheme
       />
 
       <hr />
 
+      <Input
+        value='large-text smoothed input'
+        size='large'
+        rounded='smoothed'
+      />
+
       <Button
-        value='icon button on the top'
+        value='icon BUTTON on the top'
         icon={icon}
         iconPosition='top'
         size='large'
@@ -242,6 +271,8 @@ export const App: React.FC<{}> = () => {
         appearance='convex'
         shape='square'
         equilateral
+        color='success'
+        variant='outlined'
       />
 
       <hr />
@@ -326,6 +357,17 @@ export const App: React.FC<{}> = () => {
       />
 
       <hr />
-    </div>
+
+      <Button
+        value='equilateral circle middle button'
+        size='small'
+        type='button'
+        appearance='flat'
+        shape='circle'
+        equilateral
+      />
+
+      <hr />
+    </main>
   )
 }

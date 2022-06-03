@@ -8,6 +8,7 @@ module.exports = function override(config) {
       '@types': resolve(__dirname, 'src/types'),
       '@components': resolve(__dirname, 'src/components'),
       '@theme': resolve(__dirname, 'src/theme'),
+      '@context': resolve(__dirname, 'src/context'),
       '@store': resolve(__dirname, 'src/store'),
       '@assets': resolve(__dirname, 'src/assets')
     }
