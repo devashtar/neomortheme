@@ -117,7 +117,7 @@ export const App: React.FC<{}> = () => {
 
       <h1>component Button</h1>
 
-      <Input value='small-text' size='small' />
+      <Input size='small' />
 
       <Button
         value='icon BUTTON on the top'
@@ -161,7 +161,7 @@ export const App: React.FC<{}> = () => {
 
       <hr />
 
-      <Input value='middle-text' size='middle' />
+      <Input size='middle' />
 
       <Button
         value='icon BUTTON on the top'
@@ -202,11 +202,7 @@ export const App: React.FC<{}> = () => {
 
       <hr />
 
-      <Input
-        value='large-text smoothed input'
-        size='large'
-        rounded='smoothed'
-      />
+      <Input size='large' rounded='smoothed' />
 
       <Button
         value='icon BUTTON on the top'

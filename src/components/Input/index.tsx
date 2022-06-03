@@ -34,7 +34,7 @@ export const Input: React.FC<IProps> = ({
   ref,
   id,
   name,
-  value = '',
+  value,
   placeholder,
   defaultValue,
   onChange = () => {},

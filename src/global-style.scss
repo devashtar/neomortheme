@@ -174,55 +174,52 @@
   border: 0.1875rem solid var(--main-white-shadow);
 }
 
+//* ===================== BORDER-RADIUS ====================== */
+
+.small { border-radius: var(--br-sm) }
+.middle { border-radius: var(--br-md) }
+.large { border-radius: var(--br-lg) }
+
 /* ===================== SQUARE / CIRCLE  - blocks ====================== */
 
 .circle-small, .circle-small-fixed, .square-small, .square-small-fixed {
-  min-height: var(--shape-sm);
-  min-width: var(--shape-sm);
+  min-height: var(--shape-sm) !important;
+  min-width: var(--shape-sm) !important;
 }
-.circle-small { border-radius: var(--shape-sm); }
-.square-small { border-radius: var(--br-sm); }
-.circle-small-fixed, .square-small-fixed  {
-  max-width: var(--shape-sm);
-  max-height: var(--shape-sm);
+.circle-small { border-radius: var(--shape-sm) !important; }
+.square-small { border-radius: var(--br-sm) !important; }
+.circle-small-fixed, .square-small-fixed {
+  max-width: var(--shape-sm) !important;
+  max-height: var(--shape-sm) !important;
 }
-.circle-small-fixed { border-radius: 50%; }
-.square-small-fixed { border-radius: var(--br-sm); }
+.circle-small-fixed { border-radius: 50% !important; }
+.square-small-fixed { border-radius: var(--br-sm) !important; }
 
 .circle-middle, .circle-middle-fixed, .square-middle, .square-middle-fixed {
-  min-height: var(--shape-md);
-  min-width: var(--shape-md);
+  min-height: var(--shape-md) !important;
+  min-width: var(--shape-md) !important;
 }
-.circle-middle { border-radius: var(--shape-md); }
-.square-middle { border-radius: var(--br-md); }
-.circle-middle-fixed, .square-middle-fixed  {
-  max-width: var(--shape-md);
-  max-height: var(--shape-md);
+.circle-middle { border-radius: var(--shape-md !important); }
+.square-middle { border-radius: var(--br-md) !important; }
+.circle-middle-fixed, .square-middle-fixed {
+  max-width: var(--shape-md) !important;
+  max-height: var(--shape-md) !important;
 }
-.circle-middle-fixed { border-radius: 50%; }
-.square-middle-fixed { border-radius: var(--br-md); }
+.circle-middle-fixed { border-radius: 50% !important; }
+.square-middle-fixed { border-radius: var(--br-md) !important; }
 
 .circle-large, .circle-large-fixed, .square-large, .square-large-fixed {
-  min-height: var(--shape-lg);
-  min-width: var(--shape-lg);
+  min-height: var(--shape-lg) !important;
+  min-width: var(--shape-lg) !important;
 }
-.circle-large { border-radius: var(--shape-lg); }
-.square-large { border-radius: var(--br-lg); }
-.circle-large-fixed, .square-large-fixed  {
-  max-width: var(--shape-lg);
-  max-height: var(--shape-lg);
+.circle-large { border-radius: var(--shape-lg) !important; }
+.square-large { border-radius: var(--br-lg) !important; }
+.circle-large-fixed, .square-large-fixed {
+  max-width: var(--shape-lg) !important;
+  max-height: var(--shape-lg) !important;
 }
-.circle-large-fixed { border-radius: 50%; }
-.square-large-fixed { border-radius: var(--br-lg); }
-
-//* ===================== BORDER-RADIUS ====================== */
-
-.poignant { border-radius: 0 }
-:where(.smoothed) {
-  &:where(.small) { border-radius: var(--br-sm) }
-  &:where(.middle) { border-radius: var(--br-md) }
-  &:where(.large) { border-radius: var(--br-lg) }
-}
+.circle-large-fixed { border-radius: 50% !important; }
+.square-large-fixed { border-radius: var(--br-lg) !important; }
 
 /* ==================================================== */
 /* ==================================================== */
@@ -246,11 +243,13 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-:where(html, body) * {
-  font-family: inherit;
-  line-height: inherit;
-  color: inherit;
-  border-color: inherit;
+html, body {
+  & * {
+    font-family: inherit;
+    line-height: inherit;
+    color: inherit;
+    border-color: inherit;
+  }
 }
 
 code {
@@ -261,37 +260,40 @@ code {
 /* ===================== FONT-SIZE ======================  */
 
 /* all text elements, except headers */
-:where(html, body, *:not(h1, h2, h3, h4, h5, h6)) { font-size: var(--fs) }
+html, body { font-size: var(--fs) }
 
 /* all text elements, except headers */
-*:not(h1, h2, h3, h4, h5, h6).fs-xs { font-size: 0.8rem }
-*:not(h1, h2, h3, h4, h5, h6).fs-sm { font-size: 0.9rem }
-*:not(h1, h2, h3, h4, h5, h6).fs-lg { font-size: 1.1rem }
-*:not(h1, h2, h3, h4, h5, h6).fs-xl { font-size: 1.2rem }
-*:not(h1, h2, h3, h4, h5, h6).fs-xxl { font-size: 1.3rem }
-*:not(h1, h2, h3, h4, h5, h6).fs-xxxl { font-size: 1.4rem }
+*.fs-xs { font-size: 0.8rem }
+*.fs-sm { font-size: 0.9rem }
+*.fs-lg { font-size: 1.1rem }
+*.fs-xl { font-size: 1.2rem }
+*.fs-xxl { font-size: 1.3rem }
+*.fs-xxxl { font-size: 1.4rem }
 
 /* headers */
-:where(h1, h2, h3, h4, h5, h6).fs-xs { font-size: calc(var(--h-fs) * 0.8) }
-:where(h1, h2, h3, h4, h5, h6).fs-sm { font-size: calc(var(--h-fs) * 0.9) }
-:where(h1, h2, h3, h4, h5, h6).fs-lg { font-size: calc(var(--h-fs) * 1.1) }
-:where(h1, h2, h3, h4, h5, h6).fs-xl { font-size: calc(var(--h-fs) * 1.2) }
-:where(h1, h2, h3, h4, h5, h6).fs-xxl { font-size: calc(var(--h-fs) * 1.3) }
-:where(h1, h2, h3, h4, h5, h6).fs-xxxl { font-size: calc(var(--h-fs) * 1.4) }
+h1, h2, h3, h4, h5, h6 {
+  &.fs-xs { font-size: calc(var(--h-fs) * 0.8) }
+  &.fs-sm { font-size: calc(var(--h-fs) * 0.9) }
+  &.fs-lg { font-size: calc(var(--h-fs) * 1.1) }
+  &.fs-xl { font-size: calc(var(--h-fs) * 1.2) }
+  &.fs-xxl { font-size: calc(var(--h-fs) * 1.3) }
+  &.fs-xxxl { font-size: calc(var(--h-fs) * 1.4) }
+}
 
 /* ===================== LINE-HEIGHT ====================== */
 
-:where(h1, h2, h3, h4, h5, h6) { line-height: 128% }
-*:not(h1, h2, h3, h4, h5, h6) { line-height: 144% }
+* { line-height: 144% }
+h1, h2, h3, h4, h5, h6 { line-height: 128% }
 
 /* ===================== BUTTON ====================== */
 
-:where(button, input[type=button], input[type=submit]) {
+button, input[type=button], input[type=submit] {
+  background-color: transparent;
   border: none;
   transition: box-shadow 0.15s ease-in-out;
   cursor: pointer;
 
-  &:where(.small) {
+  &.small {
     margin: 0.5rem;
     padding: 0.125rem 0.5rem;
     font-size: 0.875rem;
@@ -301,7 +303,7 @@ code {
     &:active { box-shadow: var(--shadow-sm-active) }
   }
 
-  &:where(.middle) {
+  &.middle {
     margin: 0.6725rem;
     padding: 0.5rem 0.875rem;
     font-size: 1rem;
@@ -311,7 +313,7 @@ code {
     &:active { box-shadow: var(--shadow-md-active) }
   }
 
-  &:where(.large) {
+  &.large {
     margin: 0.75rem;
     padding: 0.75rem 1.5rem;
     font-size: 1.125rem;
@@ -320,10 +322,6 @@ code {
     &:hover { box-shadow: var(--shadow-lg-pressed) }
     &:active { box-shadow: var(--shadow-lg-active) }
   }
-}
-
-:is(button, input[type=button], input[type=submit]) { 
-  background-color: transparent;
 }
 
 hr {

@@ -3,6 +3,13 @@ button  {
   justify-content: center;
   align-items: center;
 
+  .poignant { border-radius: 0 }
+  .smoothed {
+    &.small { border-radius: var(--br-sm) }
+    &.middle { border-radius: var(--br-md) }
+    &.large { border-radius: var(--br-lg) }
+  }
+
   p {
     background-color: transparent !important;
     margin: 0;
@@ -10,7 +17,7 @@ button  {
     line-height: inherit;
   }
 
-  &:is(.icon-top, .icon-bottom) { flex-direction: column }
+  &.icon-top, &.icon-bottom { flex-direction: column }
 
   &.icon-top p { order: 1 }
   &.icon-bottom p { order: -1 }
