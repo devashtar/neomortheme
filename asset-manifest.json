@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/neomortheme/static/css/main.17b39ab3.css",
-    "main.js": "/neomortheme/static/js/main.b6993bce.js",
-    "static/media/btn.svg": "/neomortheme/static/media/btn.14a69c91b1dab160329fd12d3365bff3.svg",
+    "main.css": "/neomortheme/static/css/main.9fa6cd95.css",
+    "main.js": "/neomortheme/static/js/main.f1714364.js",
+    "static/media/btn.svg": "/neomortheme/static/media/btn.9e874fc40abdea5b4beddaf3f91b1925.svg",
     "index.html": "/neomortheme/index.html",
-    "main.17b39ab3.css.map": "/neomortheme/static/css/main.17b39ab3.css.map",
-    "main.b6993bce.js.map": "/neomortheme/static/js/main.b6993bce.js.map"
+    "main.9fa6cd95.css.map": "/neomortheme/static/css/main.9fa6cd95.css.map",
+    "main.f1714364.js.map": "/neomortheme/static/js/main.f1714364.js.map"
   },
   "entrypoints": [
-    "static/css/main.17b39ab3.css",
-    "static/js/main.b6993bce.js"
+    "static/css/main.9fa6cd95.css",
+    "static/js/main.f1714364.js"
   ]
 }
