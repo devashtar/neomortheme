@@ -1,5 +1,4 @@
 import React from 'react'
-import { ThemeContext } from '@context'
 import './style.scss'
 
 interface IProps {
@@ -19,7 +18,6 @@ interface IProps {
   size?: 'small' | 'middle' | 'large'
   icon?: string
   iconPosition?: 'left' | 'right'
-  iconListenTheme?: boolean // чтобы инвертировать цвет иконки, когда меняется тема(проверено на черно-белых иконках)
   disabled?: boolean
   type?: 'text' | 'password' | 'mail'
   color?:
@@ -51,7 +49,6 @@ export const Input: React.FC<IProps> = ({
   size = 'middle',
   icon,
   iconPosition,
-  iconListenTheme,
   disabled = false,
   type = 'text',
   color = 'inherit',
@@ -71,9 +68,6 @@ export const Input: React.FC<IProps> = ({
     inputArr.push('text-' + color)
     inputArr.push('b-' + color)
   }
-
-  const { themeMode } = React.useContext(ThemeContext)!
-  const mode = iconListenTheme ? ' ' + themeMode : ''
 
   const sideIcon = iconPosition ? ' ' + iconPosition : ''
 
@@ -101,7 +95,7 @@ export const Input: React.FC<IProps> = ({
           disabled={disabled}
           className={inputArr.join(' ')}
         />
-        {icon && <img src={icon} alt='' className={iconPosition + mode} />}
+        {icon && <img src={icon} alt='' className={iconPosition} />}
       </div>
       {error && <p>{error}</p>}
     </div>

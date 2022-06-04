@@ -7,14 +7,10 @@
 
     &.left { left: 0.5rem }
     &.right { right: 0.5rem }
-
-    &.dark { filter: invert(50%) brightness(10) }
-    &.light { filter: invert(50%) brightness(0) }
   }
 
   p {
     margin: 0;
-    max-width: fit-content;
     text-align: center; 
     color: var(--red); 
   }
