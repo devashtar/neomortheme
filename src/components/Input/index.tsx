@@ -9,15 +9,19 @@ interface IProps {
   value?: string
   placeholder?: string
   defaultValue?: string
+  success?: boolean
+  warning?: string
+  error?: string
+  required?: boolean
   onChange?: (e: React.FormEvent<HTMLInputElement>) => void
   onFocus?: (e: React.FormEvent<HTMLInputElement>) => void
   onBlur?: (e: React.FormEvent<HTMLInputElement>) => void
   size?: 'small' | 'middle' | 'large'
   icon?: string
   iconPosition?: 'left' | 'right'
-  iconListenTheme?: boolean // чтобы инвертировать цвет иконки, когда меняется тема
+  iconListenTheme?: boolean // чтобы инвертировать цвет иконки, когда меняется тема(проверено на черно-белых иконках)
   disabled?: boolean
-  type?: 'text' | 'password' | 'mail' | 'checkbox' | 'radio'
+  type?: 'text' | 'password' | 'mail'
   color?:
     | 'primary'
     | 'secondary'
@@ -26,7 +30,7 @@ interface IProps {
     | 'info'
     | 'warning'
     | 'inherit'
-  rounded?: 'poignant' | 'smoothed'
+  rounded?: 'poignant' | 'smoothed' // скругления углов
   fullWidth?: boolean
 }
 
@@ -37,6 +41,10 @@ export const Input: React.FC<IProps> = ({
   value,
   placeholder,
   defaultValue,
+  success,
+  warning,
+  error,
+  required,
   onChange = () => {},
   onFocus = () => {},
   onBlur = () => {},
@@ -52,9 +60,12 @@ export const Input: React.FC<IProps> = ({
 }) => {
   const inputArr: string[] = [size]
   if (rounded) inputArr.push(rounded)
+  if (fullWidth) inputArr.push('full')
+  if (success) inputArr.push('success')
+  if (warning) inputArr.push('warning')
+  if (error) inputArr.push('error')
   if (iconPosition === 'right') inputArr.push('icon-right')
   else if (iconPosition === 'left') inputArr.push('icon-left')
-  else if (fullWidth) inputArr.push('full')
 
   if (color !== 'inherit') {
     inputArr.push('text-' + color)
@@ -64,28 +75,35 @@ export const Input: React.FC<IProps> = ({
   const { themeMode } = React.useContext(ThemeContext)!
   const mode = iconListenTheme ? ' ' + themeMode : ''
 
+  const sideIcon = iconPosition ? ' ' + iconPosition : ''
+
   return (
     <div
+      className='input-wrapper'
       style={{
-        position: 'relative',
         display: 'inline-flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         width: fullWidth ? '100%' : 'auto'
       }}
     >
-      <input
-        ref={ref}
-        id={id}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        defaultValue={defaultValue}
-        value={value}
-        disabled={disabled}
-        className={inputArr.join(' ')}
-      />
-      {icon && <img src={icon} alt='' className={iconPosition + mode} />}
+      <div className={size + sideIcon} style={{ position: 'relative' }}>
+        <input
+          ref={ref}
+          id={id}
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          defaultValue={defaultValue}
+          value={value}
+          required={required}
+          disabled={disabled}
+          className={inputArr.join(' ')}
+        />
+        {icon && <img src={icon} alt='' className={iconPosition + mode} />}
+      </div>
+      {error && <p>{error}</p>}
     </div>
   )
 }

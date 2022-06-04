@@ -117,7 +117,12 @@ export const App: React.FC<{}> = () => {
 
       <h1>component Button</h1>
 
-      <Input size='small' />
+      <Input
+        size='small'
+        icon={icon}
+        iconPosition='left'
+        error={'required dwa da dawwdawd awdawdawferf awd awdawdsef esfawdwad'}
+      />
 
       <Button
         value='icon BUTTON on the top'
@@ -128,6 +133,7 @@ export const App: React.FC<{}> = () => {
         appearance='flat'
         color='primary'
         variant='outlined'
+        rounded='smoothed'
       />
 
       <Button
@@ -139,6 +145,7 @@ export const App: React.FC<{}> = () => {
         appearance='flat'
         color='primary'
         variant='outlined'
+        rounded='smoothed'
       />
 
       <Button
@@ -148,6 +155,7 @@ export const App: React.FC<{}> = () => {
         size='small'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <Button
@@ -157,11 +165,12 @@ export const App: React.FC<{}> = () => {
         size='small'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <hr />
 
-      <Input size='middle' />
+      <Input size='middle' icon={icon} iconPosition='right' />
 
       <Button
         value='icon BUTTON on the top'
@@ -170,6 +179,7 @@ export const App: React.FC<{}> = () => {
         size='middle'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <Button
@@ -179,6 +189,7 @@ export const App: React.FC<{}> = () => {
         size='middle'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <Button
@@ -188,6 +199,7 @@ export const App: React.FC<{}> = () => {
         size='middle'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <Button
@@ -198,11 +210,12 @@ export const App: React.FC<{}> = () => {
         type='button'
         appearance='flat'
         iconListenTheme
+        rounded='smoothed'
       />
 
       <hr />
 
-      <Input size='large' rounded='smoothed' />
+      <Input type='text' icon={icon} iconPosition='left' size='middle' />
 
       <Button
         value='icon BUTTON on the top'
@@ -211,6 +224,7 @@ export const App: React.FC<{}> = () => {
         size='large'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <Button
@@ -220,6 +234,7 @@ export const App: React.FC<{}> = () => {
         size='large'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <Button
@@ -229,6 +244,7 @@ export const App: React.FC<{}> = () => {
         size='large'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <Button
@@ -238,6 +254,7 @@ export const App: React.FC<{}> = () => {
         size='large'
         type='button'
         appearance='flat'
+        rounded='smoothed'
       />
 
       <hr />
@@ -308,6 +325,7 @@ export const App: React.FC<{}> = () => {
         type='button'
         appearance='flat'
         shape='square'
+        rounded='smoothed'
       />
 
       <Button
@@ -316,6 +334,7 @@ export const App: React.FC<{}> = () => {
         type='button'
         appearance='concave'
         shape='square'
+        rounded='smoothed'
       />
 
       <Button
@@ -324,6 +343,7 @@ export const App: React.FC<{}> = () => {
         type='button'
         appearance='convex'
         shape='square'
+        rounded='smoothed'
       />
 
       <hr />
@@ -334,6 +354,7 @@ export const App: React.FC<{}> = () => {
         type='button'
         appearance='flat'
         shape='circle'
+        rounded='smoothed'
       />
 
       <Button
@@ -342,6 +363,7 @@ export const App: React.FC<{}> = () => {
         type='button'
         appearance='concave'
         shape='circle'
+        rounded='smoothed'
       />
 
       <Button
@@ -350,6 +372,7 @@ export const App: React.FC<{}> = () => {
         type='button'
         appearance='convex'
         shape='circle'
+        rounded='smoothed'
       />
 
       <hr />

@@ -41,7 +41,7 @@ export const Button: React.FC<IProps> = ({
   type = 'button',
   color = 'inherit',
   variant = 'filled',
-  rounded = 'smoothed',
+  rounded,
   appearance,
   shape,
   equilateral = false

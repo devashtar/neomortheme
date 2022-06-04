@@ -115,7 +115,8 @@
   --main-concave: var(--light-concave);
 }
 
-/* ===================== FONT-COLOR  ======================  */
+/* ======================================================== */
+/* ===================== FONT-COLOR  ====================== */
 
 * { color: var(--dark-text) }
 
@@ -129,23 +130,43 @@
 .text-contrast { color: var(--light-text) }
 .text-dark { color: var(--dark-text) }
 
+/* ===================== BACKGROUND-COLOR / BORDER ====================== */
+
+body *.flat {
+  background: var(--main-flat);
+  border: 0.1875rem solid var(--main-white-shadow);
+}
+
+body *.convex {
+  background: var(--main-convex);
+  border-top: 0.1875rem solid var(--main-white-shadow);
+  border-right: 0.1875rem solid var(--main-black-shadow);
+  border-bottom: 0.1875rem solid var(--main-black-shadow);
+  border-left: 0.1875rem solid var(--main-white-shadow);
+}
+
+body *.concave {
+  background: var(--main-concave);
+  border: 0.1875rem solid var(--main-white-shadow);
+}
+
 /* ===================== BACKGROUND-COLOR ====================== */
 
-.bg-primary { background-color: var(--primary) !important }
-.bg-secondary { background-color: var(--secondary) !important }
-.bg-success { background-color: var(--success) !important }
-.bg-info { background-color: var(--info) !important }
-.bg-warning { background-color: var(--warning) !important }
-.bg-error { background-color: var(--error) !important }
+body *.bg-primary { background-color: var(--primary) }
+body *.bg-secondary { background-color: var(--secondary) }
+body *.bg-success { background-color: var(--success) }
+body *.bg-info { background-color: var(--info) }
+body *.bg-warning { background-color: var(--warning) }
+body *.bg-error { background-color: var(--error) }
 
 /* ===================== BORDER-COLOR ====================== */
 
-.b-primary { border-color: var(--primary) !important }
-.b-secondary { border-color: var(--secondary) !important }
-.b-success { border-color: var(--success) !important }
-.b-info { border-color: var(--info) !important }
-.b-warning { border-color: var(--warning) !important }
-.b-error { border-color: var(--error) !important }
+body *.b-primary { border-color: var(--primary) }
+body *.b-secondary { border-color: var(--secondary) }
+body *.b-success { border-color: var(--success) }
+body *.b-info { border-color: var(--info) }
+body *.b-warning { border-color: var(--warning) }
+body *.b-error { border-color: var(--error) }
 
 /* ===================== BOX-SHADOW ====================== */
 
@@ -154,72 +175,57 @@
 .shadow-md { box-shadow: var(--shadow-md); border-radius: 0.5rem }
 .shadow-lg { box-shadow: var(--shadow-lg); border-radius: 0.75rem }
 
-/* ===================== BACKGROUND-COLOR / BORDER ====================== */
 
-.flat {
-  background: var(--main-flat);
-  border: 0.1875rem solid var(--main-white-shadow);
-}
-
-.convex {
-  background: var(--main-convex);
-  border-top: 0.1875rem solid var(--main-white-shadow);
-  border-right: 0.1875rem solid var(--main-black-shadow);
-  border-bottom: 0.1875rem solid var(--main-black-shadow);
-  border-left: 0.1875rem solid var(--main-white-shadow);
-}
-
-.concave {
-  background: var(--main-concave);
-  border: 0.1875rem solid var(--main-white-shadow);
-}
 
 //* ===================== BORDER-RADIUS ====================== */
 
-.small { border-radius: var(--br-sm) }
-.middle { border-radius: var(--br-md) }
-.large { border-radius: var(--br-lg) }
+.poignant { 
+  border-radius: 0;
+  &.small, &.middle, &.large { border-radius: 0 } 
+}
+.smoothed {
+  border-radius: var(--br-md);
+  &.small { border-radius: var(--br-sm) }
+  &.middle { border-radius: var(--br-md) }
+  &.large { border-radius: var(--br-lg) }
+}
 
 /* ===================== SQUARE / CIRCLE  - blocks ====================== */
 
 .circle-small, .circle-small-fixed, .square-small, .square-small-fixed {
-  min-height: var(--shape-sm) !important;
-  min-width: var(--shape-sm) !important;
+  min-height: var(--shape-sm);
+  min-width: var(--shape-sm);
 }
-.circle-small { border-radius: var(--shape-sm) !important; }
-.square-small { border-radius: var(--br-sm) !important; }
 .circle-small-fixed, .square-small-fixed {
-  max-width: var(--shape-sm) !important;
-  max-height: var(--shape-sm) !important;
+  max-width: var(--shape-sm);
+  max-height: var(--shape-sm);
 }
-.circle-small-fixed { border-radius: 50% !important; }
-.square-small-fixed { border-radius: var(--br-sm) !important; }
+.circle-small { border-radius: var(--shape-sm) }
+.circle-small-fixed { border-radius: 50% }
 
 .circle-middle, .circle-middle-fixed, .square-middle, .square-middle-fixed {
-  min-height: var(--shape-md) !important;
-  min-width: var(--shape-md) !important;
+  min-height: var(--shape-md);
+  min-width: var(--shape-md);
 }
-.circle-middle { border-radius: var(--shape-md !important); }
-.square-middle { border-radius: var(--br-md) !important; }
 .circle-middle-fixed, .square-middle-fixed {
-  max-width: var(--shape-md) !important;
-  max-height: var(--shape-md) !important;
+  max-width: var(--shape-md);
+  max-height: var(--shape-md);
 }
-.circle-middle-fixed { border-radius: 50% !important; }
-.square-middle-fixed { border-radius: var(--br-md) !important; }
+.circle-middle { border-radius: var(--shape-md) }
+.circle-middle-fixed { border-radius: 50% }
+
 
 .circle-large, .circle-large-fixed, .square-large, .square-large-fixed {
-  min-height: var(--shape-lg) !important;
-  min-width: var(--shape-lg) !important;
+  min-height: var(--shape-lg);
+  min-width: var(--shape-lg);
 }
-.circle-large { border-radius: var(--shape-lg) !important; }
-.square-large { border-radius: var(--br-lg) !important; }
 .circle-large-fixed, .square-large-fixed {
-  max-width: var(--shape-lg) !important;
-  max-height: var(--shape-lg) !important;
+  max-width: var(--shape-lg);
+  max-height: var(--shape-lg);
 }
-.circle-large-fixed { border-radius: 50% !important; }
-.square-large-fixed { border-radius: var(--br-lg) !important; }
+.circle-large { border-radius: var(--shape-lg) }
+.circle-large-fixed { border-radius: 50% }
+
 
 /* ==================================================== */
 /* ==================================================== */
@@ -228,13 +234,12 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 html, body {
   background-color: var(--main-bgcolor);
   color: var(--main-color);
-  border-color: rgba(255, 255, 255, 0.5);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -285,45 +290,8 @@ h1, h2, h3, h4, h5, h6 {
 * { line-height: 144% }
 h1, h2, h3, h4, h5, h6 { line-height: 128% }
 
-/* ===================== BUTTON ====================== */
-
-button, input[type=button], input[type=submit] {
-  background-color: transparent;
-  border: none;
-  transition: box-shadow 0.15s ease-in-out;
-  cursor: pointer;
-
-  &.small {
-    margin: 0.5rem;
-    padding: 0.125rem 0.5rem;
-    font-size: 0.875rem;
-    box-shadow: var(--shadow-sm);
-
-    &:hover { box-shadow: var(--shadow-sm-pressed) }
-    &:active { box-shadow: var(--shadow-sm-active) }
-  }
-
-  &.middle {
-    margin: 0.6725rem;
-    padding: 0.5rem 0.875rem;
-    font-size: 1rem;
-    box-shadow: var(--shadow-md);
-
-    &:hover {  box-shadow: var(--shadow-md-pressed) }
-    &:active { box-shadow: var(--shadow-md-active) }
-  }
-
-  &.large {
-    margin: 0.75rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.125rem;
-    box-shadow: var(--shadow-lg);
-    
-    &:hover { box-shadow: var(--shadow-lg-pressed) }
-    &:active { box-shadow: var(--shadow-lg-active) }
-  }
-}
 
 hr {
   margin: 2rem 0;
+  border-color: rgba(255, 255, 255, 0.5);
 }

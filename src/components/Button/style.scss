@@ -1,13 +1,57 @@
 button  {
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .poignant { border-radius: 0 }
-  .smoothed {
-    &.small { border-radius: var(--br-sm) }
-    &.middle { border-radius: var(--br-md) }
-    &.large { border-radius: var(--br-lg) }
+  border: none;
+  transition: box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+
+  &.small {
+    margin: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    box-shadow: var(--shadow-sm);
+
+    &:hover { box-shadow: var(--shadow-sm-pressed) }
+    &:active { box-shadow: var(--shadow-sm-active) }
+
+    img {
+      max-width: 1.25rem;
+      max-height: 1.125rem;
+    }
+  }
+
+  &.middle {
+    margin: 0.6725rem;
+    padding: 0.5rem 0.875rem;
+    font-size: 1rem;
+    box-shadow: var(--shadow-md);
+
+    &:hover {  box-shadow: var(--shadow-md-pressed) }
+    &:active { box-shadow: var(--shadow-md-active) }
+
+    img {
+      max-width: 1.5rem;
+      max-height: 1.375rem;
+    }
+  }
+
+  &.large {
+    margin: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    box-shadow: var(--shadow-lg);
+    
+    &:hover { box-shadow: var(--shadow-lg-pressed) }
+    &:active { box-shadow: var(--shadow-lg-active) }
+
+    img {
+      max-width: 1.75rem;
+      max-height: 1.625rem;
+    }
   }
 
   p {
@@ -28,19 +72,6 @@ button  {
   &.icon-right p {
     order: -1;
     margin-right: 0.75rem;
-  }
-
-  &.small img {
-    max-width: 1.25rem;
-    max-height: 1.125rem;
-  }
-  &.middle img {
-    max-width: 1.5rem;
-    max-height: 1.375rem;
-  }
-  &.large img {
-    max-width: 1.75rem;
-    max-height: 1.625rem;
   }
   
   img { 
