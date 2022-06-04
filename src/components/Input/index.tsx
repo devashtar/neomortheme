@@ -73,7 +73,7 @@ export const Input: React.FC<IProps> = ({
 
   return (
     <div
-      className='input-wrapper'
+      className={'input-wrapper' + ' ' + size}
       style={{
         display: 'inline-flex',
         flexDirection: 'column',
@@ -82,7 +82,7 @@ export const Input: React.FC<IProps> = ({
         width: fullWidth ? '100%' : 'auto'
       }}
     >
-      <div className={size + sideIcon} style={{ position: 'relative' }}>
+      <div className={sideIcon} style={{ position: 'relative' }}>
         <input
           ref={ref}
           id={id}
@@ -97,7 +97,7 @@ export const Input: React.FC<IProps> = ({
         />
         {icon && <img src={icon} alt='' className={iconPosition} />}
       </div>
-      {error && <p>{error}</p>}
+      {(error || warning) && <p>{error || warning}</p>}
     </div>
   )
 }

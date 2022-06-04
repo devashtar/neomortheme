@@ -58,71 +58,54 @@ export const App: React.FC<{}> = () => {
       <hr />
 
       <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          textAlign: 'center'
-        }}
+        style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column' }}
+        className='shadow-md'
       >
-        <div
-          style={{ padding: '1.5rem' }}
-          className='shadow-sm circle-small-fixed'
-        >
-          <h3>circle block</h3>
-        </div>
-        <div
-          style={{ padding: '1.5rem' }}
-          className='concave shadow-md circle-middle-fixed'
-        >
-          <h3>circle concave block</h3>
-        </div>
-        <div
-          style={{ padding: '1.5rem' }}
-          className='convex shadow-lg circle-large-fixed'
-        >
-          <h3>circle convex block</h3>
-        </div>
-      </div>
-
-      <hr />
-
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          textAlign: 'center'
-        }}
-      >
-        <div
-          style={{ padding: '1.5rem' }}
-          className='shadow-sm square-sm-fixed'
-        >
-          <h3>square block</h3>
-        </div>
-        <div
-          style={{ padding: '1.5rem' }}
-          className='concave shadow-md square-md-fixed'
-        >
-          <h3>square concave block</h3>
-        </div>
-        <div
-          style={{ padding: '1.5rem' }}
-          className='convex shadow-lg square-lg-fixed'
-        >
-          <h3>square convex block</h3>
-        </div>
+        <h3 style={{ textAlign: 'center' }}>small input</h3>
+        <Input size='small' />
+        <br />
+        <Input size='small' error={'error'} />
+        <Input size='small' warning={'warning'} />
+        <Input size='small' rounded='smoothed' success />
+        <h3 style={{ textAlign: 'center' }}>middle input with icon</h3>
+        <Input size='middle' icon={icon} iconPosition='left' />
+        <br />
+        <Input size='middle' icon={icon} iconPosition='left' error={'error'} />
+        <Input
+          size='middle'
+          icon={icon}
+          iconPosition='left'
+          warning={'warning'}
+        />
+        <Input
+          size='middle'
+          icon={icon}
+          iconPosition='left'
+          rounded='smoothed'
+          success
+        />
+        <h3 style={{ textAlign: 'center' }}>large input</h3>
+        <Input size='large' icon={icon} iconPosition='right' />
+        <br />
+        <Input size='large' icon={icon} iconPosition='right' error={'error'} />
+        <Input
+          size='large'
+          icon={icon}
+          iconPosition='right'
+          warning={'warning'}
+        />
+        <Input
+          size='large'
+          icon={icon}
+          iconPosition='right'
+          rounded='smoothed'
+          success
+        />
       </div>
 
       <hr />
 
       <h1>component Button</h1>
-
-      <Input
-        size='small'
-        icon={icon}
-        iconPosition='left'
-        error={'required dwa da dawwdawd awdawdawferf awd awdawdsef esfawdwad'}
-      />
 
       <Button
         value='icon BUTTON on the top'
@@ -169,8 +152,6 @@ export const App: React.FC<{}> = () => {
       />
 
       <hr />
-
-      <Input size='middle' icon={icon} iconPosition='right' />
 
       <Button
         value='icon BUTTON on the top'
@@ -214,8 +195,6 @@ export const App: React.FC<{}> = () => {
       />
 
       <hr />
-
-      <Input type='text' icon={icon} iconPosition='left' size='middle' />
 
       <Button
         value='icon BUTTON on the top'
@@ -373,17 +352,6 @@ export const App: React.FC<{}> = () => {
         appearance='convex'
         shape='circle'
         rounded='smoothed'
-      />
-
-      <hr />
-
-      <Button
-        value='equilateral circle middle button'
-        size='small'
-        type='button'
-        appearance='flat'
-        shape='circle'
-        equilateral
       />
 
       <hr />
