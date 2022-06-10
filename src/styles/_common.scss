@@ -1,0 +1,134 @@
+@import './variables';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box
+}
+
+html, body {
+  background-color: var(--main-bgcolor);
+  font-size: var(--fs);
+  color: var(--main-color);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  & * {
+    font-family: inherit;
+    line-height: inherit;
+    color: inherit;
+    border-color: inherit;
+  }
+}
+
+.text-primary { color: var(--primary) }
+.text-secondary { color: var(--secondary) }
+.text-success { color: var(--success) }
+.text-info { color: var(--info) }
+.text-warning { color: var(--warning) }
+.text-error { color: var(--error) }
+
+.text-contrast { color: var(--light-text) }
+.text-dark { color: var(--dark-text) }
+
+/* ===================== BACKGROUND-COLOR / BORDER ====================== */
+
+body *.flat {
+  background: var(--main-flat);
+  border: 0.1875rem solid var(--main-white-shadow);
+}
+
+body *.convex {
+  background: var(--main-convex);
+  border-top: 0.1875rem solid var(--main-white-shadow);
+  border-right: 0.1875rem solid var(--main-black-shadow);
+  border-bottom: 0.1875rem solid var(--main-black-shadow);
+  border-left: 0.1875rem solid var(--main-white-shadow);
+}
+
+body *.concave {
+  background: var(--main-concave);
+  border: 0.1875rem solid var(--main-white-shadow);
+}
+
+/* ===================== BACKGROUND-COLOR ====================== */
+
+body *.bg-primary { background-color: var(--primary) }
+body *.bg-secondary { background-color: var(--secondary) }
+body *.bg-success { background-color: var(--success) }
+body *.bg-info { background-color: var(--info) }
+body *.bg-warning { background-color: var(--warning) }
+body *.bg-error { background-color: var(--error) }
+
+/* ===================== BORDER-COLOR ====================== */
+
+body *.b-primary { border-color: var(--primary) }
+body *.b-secondary { border-color: var(--secondary) }
+body *.b-success { border-color: var(--success) }
+body *.b-info { border-color: var(--info) }
+body *.b-warning { border-color: var(--warning) }
+body *.b-error { border-color: var(--error) }
+
+/* ===================== BOX-SHADOW ====================== */
+
+/* any element */
+.shadow-sm { box-shadow: var(--shadow-sm); border-radius: 0.375rem }
+.shadow-md { box-shadow: var(--shadow-md); border-radius: 0.5rem }
+.shadow-lg { box-shadow: var(--shadow-lg); border-radius: 0.75rem }
+
+
+
+//* ===================== BORDER-RADIUS ====================== */
+
+.poignant { 
+  border-radius: 0;
+  &.small, &.middle, &.large { border-radius: 0 } 
+}
+.smoothed {
+  border-radius: var(--br-md);
+  &.small { border-radius: var(--br-sm) }
+  &.middle { border-radius: var(--br-md) }
+  &.large { border-radius: var(--br-lg) }
+}
+
+/* ===================== SQUARE / CIRCLE  - blocks ====================== */
+
+.circle-small, .circle-small-fixed, .square-small, .square-small-fixed {
+  min-height: var(--shape-sm);
+  min-width: var(--shape-sm);
+}
+.circle-small-fixed, .square-small-fixed {
+  max-width: var(--shape-sm);
+  max-height: var(--shape-sm);
+}
+.circle-small { border-radius: var(--shape-sm) }
+.circle-small-fixed { border-radius: 50% }
+
+.circle-middle, .circle-middle-fixed, .square-middle, .square-middle-fixed {
+  min-height: var(--shape-md);
+  min-width: var(--shape-md);
+}
+.circle-middle-fixed, .square-middle-fixed {
+  max-width: var(--shape-md);
+  max-height: var(--shape-md);
+}
+.circle-middle { border-radius: var(--shape-md) }
+.circle-middle-fixed { border-radius: 50% }
+
+
+.circle-large, .circle-large-fixed, .square-large, .square-large-fixed {
+  min-height: var(--shape-lg);
+  min-width: var(--shape-lg);
+}
+.circle-large-fixed, .square-large-fixed {
+  max-width: var(--shape-lg);
+  max-height: var(--shape-lg);
+}
+.circle-large { border-radius: var(--shape-lg) }
+.circle-large-fixed { border-radius: 50% }

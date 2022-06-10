@@ -1,0 +1,49 @@
+@import './variables';
+
+html, body {
+  font-size: var(--fs);
+  color: var(--main-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  & * {
+    font-family: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ===================== FONT-SIZE ======================  */
+
+/* all text elements, except headers */
+*.fs-xs { font-size: 0.8rem }
+*.fs-sm { font-size: 0.9rem }
+*.fs-lg { font-size: 1.1rem }
+*.fs-xl { font-size: 1.2rem }
+*.fs-xxl { font-size: 1.3rem }
+*.fs-xxxl { font-size: 1.4rem }
+
+/* headers */
+h1, h2, h3, h4, h5, h6 {
+  &.fs-xs { font-size: calc(var(--h-fs) * 0.8) }
+  &.fs-sm { font-size: calc(var(--h-fs) * 0.9) }
+  &.fs-lg { font-size: calc(var(--h-fs) * 1.1) }
+  &.fs-xl { font-size: calc(var(--h-fs) * 1.2) }
+  &.fs-xxl { font-size: calc(var(--h-fs) * 1.3) }
+  &.fs-xxxl { font-size: calc(var(--h-fs) * 1.4) }
+}
+
+/* ===================== LINE-HEIGHT ====================== */
+
+* { line-height: 144% }
+h1, h2, h3, h4, h5, h6 { line-height: 128% }

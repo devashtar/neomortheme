@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
-import './global-style.scss'
+
+import './styles/index.scss'
 import { ThemeProvider } from '@context'
 
 import { App } from './App'
